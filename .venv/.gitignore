@@ -1,0 +1,39 @@
+# .gitignore
+@'
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env
+.venv/
+venv/
+.Python
+
+# Jupyter
+.ipynb_checkpoints
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# data / model (optional: commit small CSV but ignore raw big exports)
+data/raw/
+data/*.parquet
+models/*.pkl
+models/*.h5
+*.sqlite3
+
+# logs
+logs/
+*.log
+
+# system
+*.tmp
+
+'@ | Set-Content .gitignore -Encoding UTF8
