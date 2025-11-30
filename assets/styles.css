@@ -324,3 +324,82 @@ div[style*="overflow-x"] {
   background-color: var(--accent) !important;
   color: var(--text-dark) !important;
 }
+
+/* ============================================ */
+/* SELECTBOX / DROPDOWN - ADDITIONAL FIX */
+/* ============================================ */
+
+/* Selectbox container */
+.stSelectbox > div > div {
+  background-color: var(--input-bg) !important;
+}
+
+/* Selectbox input/button */
+.stSelectbox [data-baseweb="select"] > div {
+  background-color: var(--input-bg) !important;
+  border-color: #34495e !important;
+}
+
+/* Selectbox selected value text */
+.stSelectbox [data-baseweb="select"] > div > div {
+  background-color: var(--input-bg) !important;
+  color: var(--text-light) !important;
+}
+
+/* Selectbox on focus */
+.stSelectbox [data-baseweb="select"]:focus-within > div {
+  background-color: var(--input-focus) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 2px rgba(243, 156, 18, 0.2) !important;
+}
+
+/* Dropdown menu (when opened) */
+[data-baseweb="popover"] {
+  background-color: var(--input-bg) !important;
+}
+
+/* Dropdown options list */
+[role="listbox"],
+[data-baseweb="menu"] > ul {
+  background-color: var(--input-bg) !important;
+  border: 1px solid #34495e !important;
+}
+
+/* Individual dropdown options */
+[role="option"],
+[data-baseweb="menu"] li {
+  background-color: var(--input-bg) !important;
+  color: var(--text-light) !important;
+  padding: 8px 12px !important;
+}
+
+/* Dropdown option on hover */
+[role="option"]:hover,
+[data-baseweb="menu"] li:hover {
+  background-color: var(--input-focus) !important;
+  color: var(--accent) !important;
+}
+
+/* Dropdown option selected */
+[role="option"][aria-selected="true"],
+[data-baseweb="menu"] li[aria-selected="true"] {
+  background-color: var(--accent) !important;
+  color: var(--text-dark) !important;
+  font-weight: 600 !important;
+}
+
+/* Selectbox arrow icon */
+.stSelectbox svg {
+  fill: var(--text-light) !important;
+}
+
+/* Selectbox placeholder */
+.stSelectbox [data-baseweb="select"] input::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Force white text in selectbox */
+.stSelectbox [data-baseweb="select"] input,
+.stSelectbox [data-baseweb="select"] span {
+  color: var(--text-light) !important;
+}
