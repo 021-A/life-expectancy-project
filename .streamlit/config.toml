@@ -6,9 +6,9 @@ secondaryBackgroundColor = "#ECF0F1"
 textColor = "#FFFFFF"
 font = "sans serif"
 
-[global]
-dataFrameSerialization = "legacy"
-
 [server]
-enableXsrfProtection = false
-headless = false
+headless = true
+port = 8501
+
+[browser]
+gatherUsageStats = false
