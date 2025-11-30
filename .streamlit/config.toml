@@ -1,0 +1,14 @@
+[theme]
+base = "dark"
+primaryColor = "#F39C12"
+backgroundColor = "#2C3E50"
+secondaryBackgroundColor = "#ECF0F1"
+textColor = "#FFFFFF"
+font = "sans serif"
+
+[global]
+dataFrameSerialization = "legacy"
+
+[server]
+enableXsrfProtection = false
+headless = false

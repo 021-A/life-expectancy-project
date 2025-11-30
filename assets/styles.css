@@ -1,0 +1,38 @@
+/* Table styling for HTML tables */
+table.dataframe {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--card-bg);
+  color: var(--text-dark);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table.dataframe thead {
+  background-color: var(--bg-main);
+  color: var(--text-light);
+}
+
+table.dataframe th,
+table.dataframe td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+table.dataframe tbody tr:hover {
+  background-color: rgba(243, 156, 18, 0.1);
+}
+
+table.dataframe th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* Scrollable table container */
+div[style*="overflow-x"] {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
