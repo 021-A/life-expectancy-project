@@ -1,37 +1,326 @@
-/* Input fields - FIX WHITE BACKGROUND */
-.stTextInput > div > div > input,
-.stNumberInput > div > div > input,
-.stSelectbox > div > div > select {
-  background-color: #2C3E50 !important;  /* Dark blue background */
-  color: #FFFFFF !important;              /* White text */
+:root {
+  --bg-main: #2C3E50;
+  --accent: #F39C12;
+  --card-bg: #ECF0F1;
+  --text-dark: #2C3E50;
+  --text-light: #FFFFFF;
+  --input-bg: #34495e;
+  --input-focus: #3d5a80;
+}
+
+/* Body background (wrap the app area) */
+[data-testid="stAppViewContainer"] {
+  background-color: var(--bg-main) !important;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+  background-color: #34495e !important;
+}
+
+/* Main content container */
+.block-container {
+  padding: 2rem 3rem !important;
+  max-width: 1200px;
+}
+
+/* Header styling */
+.app-header {
+  background: linear-gradient(135deg, var(--bg-main) 0%, #34495e 100%);
+  color: var(--text-light);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.app-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.app-subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Navigation tabs */
+.stRadio > div {
+  background-color: rgba(52, 73, 94, 0.5);
+  padding: 0.5rem;
+  border-radius: 10px;
+  gap: 0.5rem;
+}
+
+.stRadio > div > label {
+  background-color: transparent;
+  color: var(--text-light) !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.stRadio > div > label:hover {
+  background-color: rgba(243, 156, 18, 0.2);
+}
+
+.stRadio > div > label[data-checked="true"] {
+  background-color: var(--accent) !important;
+  color: var(--text-dark) !important;
+  font-weight: 600;
+}
+
+/* Card components */
+.custom-card {
+  background: var(--card-bg);
+  color: var(--text-dark);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1.5rem;
+}
+
+.custom-card h3 {
+  color: var(--bg-main);
+  margin-bottom: 1rem;
+  font-size: 20px;
+}
+
+/* Metric cards */
+[data-testid="stMetricValue"] {
+  color: var(--accent) !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+}
+
+[data-testid="stMetricLabel"] {
+  color: var(--text-light) !important;
+  font-size: 14px !important;
+}
+
+/* ============================================ */
+/* INPUT FIELDS - CRITICAL FIX FOR WHITE BACKGROUND */
+/* ============================================ */
+
+/* Text Input - All variations */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+.stTextInput input,
+.stNumberInput input,
+[data-baseweb="input"] input,
+div[data-baseweb="input"] > input {
+  background-color: var(--input-bg) !important;
+  color: var(--text-light) !important;
+  border: 2px solid #34495e !important;
+  border-radius: 8px !important;
+  padding: 0.5rem 0.75rem !important;
+}
+
+/* Input on focus */
+input[type="text"]:focus,
+input[type="number"]:focus,
+.stTextInput input:focus,
+.stNumberInput input:focus,
+[data-baseweb="input"] input:focus {
+  background-color: var(--input-focus) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 2px rgba(243, 156, 18, 0.2) !important;
+  color: var(--text-light) !important;
+  outline: none !important;
+}
+
+/* Selectbox / Dropdown */
+.stSelectbox select,
+select,
+[data-baseweb="select"] select,
+div[data-baseweb="select"] {
+  background-color: var(--input-bg) !important;
+  color: var(--text-light) !important;
   border: 2px solid #34495e !important;
   border-radius: 8px !important;
 }
 
-.stTextInput > div > div > input:focus,
-.stNumberInput > div > div > input:focus,
-.stSelectbox > div > div > select:focus {
-  border-color: #F39C12 !important;       /* Orange border on focus */
+.stSelectbox select:focus,
+[data-baseweb="select"] select:focus {
+  border-color: var(--accent) !important;
   box-shadow: 0 0 0 2px rgba(243, 156, 18, 0.2) !important;
-  background-color: #34495e !important;   /* Slightly lighter when focused */
+  background-color: var(--input-focus) !important;
 }
 
-/* Placeholder text color */
-.stTextInput > div > div > input::placeholder,
-.stNumberInput > div > div > input::placeholder {
+/* Dropdown options */
+.stSelectbox select option,
+select option {
+  background-color: var(--input-bg) !important;
+  color: var(--text-light) !important;
+  padding: 8px !important;
+}
+
+/* Placeholder text */
+input::placeholder,
+textarea::placeholder {
   color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* Input label color */
-.stTextInput > label,
-.stNumberInput > label,
-.stSelectbox > label {
-  color: #ECF0F1 !important;
+/* Input labels */
+.stTextInput label,
+.stNumberInput label,
+.stSelectbox label,
+label {
+  color: var(--card-bg) !important;
   font-weight: 500 !important;
+  margin-bottom: 0.5rem !important;
 }
 
-/* Dropdown/Select options */
-.stSelectbox select option {
-  background-color: #2C3E50 !important;
-  color: #FFFFFF !important;
+/* Textarea */
+textarea,
+.stTextArea textarea {
+  background-color: var(--input-bg) !important;
+  color: var(--text-light) !important;
+  border: 2px solid #34495e !important;
+  border-radius: 8px !important;
+}
+
+textarea:focus,
+.stTextArea textarea:focus {
+  background-color: var(--input-focus) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 2px rgba(243, 156, 18, 0.2) !important;
+}
+
+/* ============================================ */
+/* END INPUT FIELDS FIX */
+/* ============================================ */
+
+/* Buttons */
+.stButton > button {
+  background-color: var(--accent) !important;
+  color: var(--text-dark) !important;
+  font-weight: 600 !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 0.6rem 1.5rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.stButton > button:hover {
+  background-color: #e67e22 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(243, 156, 18, 0.3) !important;
+}
+
+/* Form submit button */
+button[kind="primary"],
+button[kind="primaryFormSubmit"] {
+  background-color: var(--accent) !important;
+  color: var(--text-dark) !important;
+  font-weight: 700 !important;
+}
+
+/* Dataframe/Table */
+.dataframe {
+  background-color: var(--card-bg) !important;
+  color: var(--text-dark) !important;
+}
+
+.dataframe thead tr th {
+  background-color: var(--bg-main) !important;
+  color: var(--text-light) !important;
+}
+
+/* Table styling for HTML tables */
+table.dataframe {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--card-bg);
+  color: var(--text-dark);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table.dataframe thead {
+  background-color: var(--bg-main);
+  color: var(--text-light);
+}
+
+table.dataframe th,
+table.dataframe td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+table.dataframe tbody tr:hover {
+  background-color: rgba(243, 156, 18, 0.1);
+}
+
+table.dataframe th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* Success/Error/Info boxes */
+.stSuccess {
+  background-color: rgba(243, 156, 18, 0.2) !important;
+  color: var(--text-light) !important;
+  border-left: 4px solid var(--accent) !important;
+}
+
+.stError {
+  background-color: rgba(231, 76, 60, 0.2) !important;
+  border-left: 4px solid #e74c3c !important;
+}
+
+.stInfo {
+  background-color: rgba(52, 152, 219, 0.2) !important;
+  border-left: 4px solid #3498db !important;
+}
+
+/* Footer */
+.app-footer {
+  background: rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 3rem;
+  font-size: 14px;
+}
+
+/* Progress bar */
+.stProgress > div > div > div {
+  background-color: var(--accent) !important;
+}
+
+/* Links */
+a {
+  color: var(--accent) !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: underline !important;
+}
+
+/* Images */
+img {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollable table container */
+div[style*="overflow-x"] {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Multiselect */
+.stMultiSelect [data-baseweb="tag"] {
+  background-color: var(--accent) !important;
+  color: var(--text-dark) !important;
 }
