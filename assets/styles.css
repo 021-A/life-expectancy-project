@@ -1,38 +1,37 @@
-/* Table styling for HTML tables */
-table.dataframe {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: var(--card-bg);
-  color: var(--text-dark);
-  border-radius: 8px;
-  overflow: hidden;
+/* Input fields - FIX WHITE BACKGROUND */
+.stTextInput > div > div > input,
+.stNumberInput > div > div > input,
+.stSelectbox > div > div > select {
+  background-color: #2C3E50 !important;  /* Dark blue background */
+  color: #FFFFFF !important;              /* White text */
+  border: 2px solid #34495e !important;
+  border-radius: 8px !important;
 }
 
-table.dataframe thead {
-  background-color: var(--bg-main);
-  color: var(--text-light);
+.stTextInput > div > div > input:focus,
+.stNumberInput > div > div > input:focus,
+.stSelectbox > div > div > select:focus {
+  border-color: #F39C12 !important;       /* Orange border on focus */
+  box-shadow: 0 0 0 2px rgba(243, 156, 18, 0.2) !important;
+  background-color: #34495e !important;   /* Slightly lighter when focused */
 }
 
-table.dataframe th,
-table.dataframe td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+/* Placeholder text color */
+.stTextInput > div > div > input::placeholder,
+.stNumberInput > div > div > input::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
 }
 
-table.dataframe tbody tr:hover {
-  background-color: rgba(243, 156, 18, 0.1);
+/* Input label color */
+.stTextInput > label,
+.stNumberInput > label,
+.stSelectbox > label {
+  color: #ECF0F1 !important;
+  font-weight: 500 !important;
 }
 
-table.dataframe th {
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 0.5px;
-}
-
-/* Scrollable table container */
-div[style*="overflow-x"] {
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+/* Dropdown/Select options */
+.stSelectbox select option {
+  background-color: #2C3E50 !important;
+  color: #FFFFFF !important;
 }
